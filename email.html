@@ -1,0 +1,708 @@
+>>> modules/jobs/views/email_templates/apply_now.php
+
+<table class="main-tb" width="380"  align="center">
+  <tr>
+    <td><p style="font-family: Arial, Helvetica, sans-serif, 'Open Sans';">The following person has applied for a vacancy.</p></td>
+  </tr>
+  <tr>
+    <td>
+      <table>
+        <?php if ($this->job->id) { ?>
+        <tr>
+          <td class="label" style="font-family: Arial, Helvetica, sans-serif, 'Open Sans';">Job Vacancy:</td>
+          <td style="font-family: Arial, Helvetica, sans-serif, 'Open Sans';"><a href="{URL:job/<?= $this->job->slug ?>}" target="_blank" style="text-decoration: none; color: #1F5DB4"><?= $this->job->title; ?></a></td>
+        </tr>
+        <?php } ?>
+        <?php if ($this->data['name']) { ?>
+        <tr>
+          <td class="label" style="font-family: Arial, Helvetica, sans-serif, 'Open Sans';">Full name:</td>
+          <td style="font-family: Arial, Helvetica, sans-serif, 'Open Sans';"><?= $this->data['name'] ?></td>
+        </tr>
+        <?php } ?>
+        <?php if ($this->data['tel']) { ?>
+        <tr>
+          <td class="label" style="font-family: Arial, Helvetica, sans-serif, 'Open Sans';">Telephone:</td>
+          <td style="font-family: Arial, Helvetica, sans-serif, 'Open Sans';"><a href="tel:<?= $this->data['tel'] ?>" style="text-decoration: none; color: #1F5DB4"><?= $this->data['tel'] ?></a></td>
+        </tr>
+        <?php } ?>
+        <?php if ($this->data['email']) { ?>
+        <tr>
+          <td class="label" style="font-family: Arial, Helvetica, sans-serif, 'Open Sans';">Email:</td>
+          <td style="font-family: Arial, Helvetica, sans-serif, 'Open Sans';"><a href="mailto:<?= $this->data['email'] ?>" style="text-decoration: none; color: #1F5DB4"><?= $this->data['email'] ?></a></td>
+        </tr>
+        <?php } ?>
+        <?php if ($this->data['linkedin']) { ?>
+        <tr>
+          <td class="label" style="font-family: Arial, Helvetica, sans-serif, 'Open Sans';">LinkedIn:</td>
+          <td style="font-family: Arial, Helvetica, sans-serif, 'Open Sans';"><a href="<?= $this->data['linkedin'] ?>" style="text-decoration: none; color: #1F5DB4"><?= $this->data['linkedin'] ?></a></td>
+        </tr>
+        <?php } ?>
+      </table>т
+    </td>
+  </tr>
+</table>
+
+
+
+
+
+
+>>> modules/jobs/views/email_templates/apply_now_thanks.php
+
+<table cellpadding="0" cellspacing="0" width="100%" bgcolor="#ffffff">
+  <tr>
+    <td>
+      <table class="main table-600" cellpadding="0" cellspacing="0" width="600" align="center">
+        <tr>
+          <td height="30" width="100%"></td>
+        </tr>
+        <tr>
+          <td class="header-td">
+            <table class="table-460" cellpadding="0" cellspacing="0" width="460" align="center">
+              <tr>
+                <td align="center" class="logo">
+                  <img src="{URL:/}app/public/images/panel/email_logo.png" alt="logo" />
+                </td>
+              </tr>
+              <tr>
+                <td align="center" class="title">
+                  <h3 class="title" style="font-family: Arial, Helvetica, sans-serif, 'Open Sans';">Vacancy Application</h3>
+                </td>
+              </tr>
+              <tr>
+                <td height="28"></td>
+              </tr>
+              <tr>
+                <td bgcolor="#F1F1F1" height="1"></td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <table class="main-tb" width="380"  align="center">
+              <tr>
+                <td>
+                  <p style="font-family: Arial, Helvetica, sans-serif, 'Open Sans';">Thank you <?= $this->data['name']; ?> for applying to <a href="{URL:job/<?= $this->job->slug ?>}" target="_blank"><?= $this->job->title; ?></a></p>
+                  <p style="font-family: Arial, Helvetica, sans-serif, 'Open Sans';">One of our team will review this and we will get back to you as soon as possible.</p>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+        <tr>
+          <td height="30"></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+
+
+
+
+
+
+
+>>> modules/about_us/views/email_templates/contact.php
+
+<table border="0" cellpadding="0" cellspacing="0" class="body">
+  <tr>
+    <td>&nbsp;</td>
+    <td class="container">
+      <div class="content">
+        <!-- START CENTERED WHITE CONTAINER -->
+        <table class="main">
+          <!-- START MAIN CONTENT AREA -->
+          <tr>
+            <td class="wrapper"><p><strong>New contact</strong></p>
+
+              <table width="100%" border="0" cellspacing="0" cellpadding="0" style="font-size:14px; color:#636363; font-family: Tahoma,sans-serif;">
+                <?php if (post('name')) { ?>
+                <tr>
+                  <td width="40%" style="padding: 10px; border-bottom: 1px solid #cccccc;"><strong>Name</strong></td>
+                  <td width="60%" style="padding: 10px; border-bottom: 1px solid #cccccc;"><?= post('name'); ?></td>
+                </tr>
+                <?php } ?>
+                <?php if (post('email')) { ?>
+                <tr>
+                  <td width="40%" style="padding: 10px; border-bottom: 1px solid #cccccc;"><strong>Email</strong></td>
+                  <td width="60%" style="padding: 10px; border-bottom: 1px solid #cccccc;"><?= post('email'); ?></td>
+                </tr>
+                <?php } ?>
+                <?php if (post('message')) { ?>
+                <tr>
+                  <td width="40%" style="padding: 10px; border-bottom: 1px solid #cccccc;"><strong>Message</strong></td>
+                  <td width="60%" style="padding: 10px; border-bottom: 1px solid #cccccc;"><?= post('message'); ?></td>
+                </tr>
+                <?php } ?>
+              </table>
+            </td>
+          </tr>
+          <!-- END MAIN CONTENT AREA -->
+        </table>
+        <!-- START FOOTER --><!-- END FOOTER -->
+        <!-- END CENTERED WHITE CONTAINER -->
+      </div>
+    </td>
+    <td>&nbsp;</td>
+  </tr>
+</table>
+
+
+
+
+
+
+
+
+>>> modules/about_us/views/email_templates/contact_us.php
+
+<table border="0" cellpadding="0" cellspacing="0" class="body">
+  <tr>
+    <td>&nbsp;</td>
+    <td class="container">
+      <div class="content">
+        <!-- START CENTERED WHITE CONTAINER -->
+        <table class="main">
+          <!-- START MAIN CONTENT AREA -->
+          <tr>
+            <td class="wrapper"><p><strong>Submitted Contact Us form</strong></p>
+              <p>The following person has submited Contact Us form.</p>
+
+              <table width="100%" border="0" cellspacing="0" cellpadding="0" style="font-size:14px; color:#636363; font-family: Tahoma,sans-serif;">
+                <?php if ($this->uvid) { ?>
+                <tr>
+                  <td width="40%" style="padding: 10px; border-bottom: 1px solid #cccccc;"><strong>Uploaded Vacancy</strong></td>
+                  <td width="60%" style="padding: 10px; border-bottom: 1px solid #cccccc;"><a href="{URL:panel/vacancy_applications/edit/<?= $this->uvid; ?> }" target="_blank">ID: <?= $this->uvid; ?></a></td>
+                </tr>
+                <?php } ?>
+                <?php if ($this->data['name']) { ?>
+                <tr>
+                  <td width="40%" style="padding: 10px; border-bottom: 1px solid #cccccc;"><strong>Full name</strong></td>
+                  <td width="60%" style="padding: 10px; border-bottom: 1px solid #cccccc;"><?= $this->data['name']; ?></td>
+                </tr>
+                <?php } ?>
+                <?php if ($this->data['tel']) { ?>
+                <tr>
+                  <td width="40%" style="padding: 10px; border-bottom: 1px solid #cccccc;"><strong>Telephone</strong></td>
+                  <td width="60%" style="padding: 10px; border-bottom: 1px solid #cccccc;"><?= $this->data['tel']; ?></td>
+                </tr>
+                <?php } ?>
+                <?php if ($this->data['email']) { ?>
+                <tr>
+                  <td width="40%" style="padding: 10px; border-bottom: 1px solid #cccccc;"><strong>Email</strong></td>
+                  <td width="60%" style="padding: 10px; border-bottom: 1px solid #cccccc;"><?= $this->data['email']; ?></td>
+                </tr>
+                <?php } ?>
+                <?php if ($this->data['linkedin']) { ?>
+                <tr>
+                  <td width="40%" style="padding: 10px; border-bottom: 1px solid #cccccc;"><strong>LinkedIn</strong></td>
+                  <td width="60%" style="padding: 10px; border-bottom: 1px solid #cccccc;"><?= $this->data['linkedin']; ?></td>
+                </tr>
+                <?php } ?>
+                <?php if ($this->data['message']) { ?>
+                <tr>
+                  <td width="40%" style="padding: 10px; border-bottom: 1px solid #cccccc;"><strong>Message</strong></td>
+                  <td width="60%" style="padding: 10px; border-bottom: 1px solid #cccccc;"><?= $this->data['message']; ?></td>
+                </tr>
+                <?php } ?>
+              </table>
+            </td>
+          </tr>
+          <!-- END MAIN CONTENT AREA -->
+        </table>
+        <!-- START FOOTER --><!-- END FOOTER -->
+        <!-- END CENTERED WHITE CONTAINER -->
+      </div>
+    </td>
+    <td>&nbsp;</td>
+  </tr>
+</table>
+
+
+
+
+
+
+
+>>> modules/page/views/email_templates/book_call.php
+
+<table border="0" cellpadding="0" cellspacing="0" class="body">
+  <tr>
+    <td>&nbsp;</td>
+    <td class="container">
+      <div class="content">
+        <!-- START CENTERED WHITE CONTAINER -->
+        <table class="main">
+          <!-- START MAIN CONTENT AREA -->
+          <tr>
+            <td class="wrapper"><p><strong>New Call Booking</strong></p>
+              <p>The following person has requested a call.</p>
+              <table width="100%" border="0" cellspacing="0" cellpadding="0" style="font-size:14px; color:#636363; font-family: Tahoma,sans-serif;">
+                <?php if ($this->data['name']) { ?>
+                <tr>
+                  <td width="40%" style="padding: 10px; border-bottom: 1px solid #cccccc;"><strong>Full Name</strong></td>
+                  <td width="60%" style="padding: 10px; border-bottom: 1px solid #cccccc;"><?= $this->data['name']; ?></td>
+                </tr>
+                <?php } ?>
+                <?php if ($this->data['company']) { ?>
+                <tr>
+                  <td width="40%" style="padding: 10px; border-bottom: 1px solid #cccccc;"><strong>Company</strong></td>
+                  <td width="60%" style="padding: 10px; border-bottom: 1px solid #cccccc;"><?= $this->data['company']; ?></td>
+                </tr>
+                <?php } ?>
+                <?php if ($this->data['email']) { ?>
+                <tr>
+                  <td width="40%" style="padding: 10px; border-bottom: 1px solid #cccccc;"><strong>Email</strong></td>
+                  <td width="60%" style="padding: 10px; border-bottom: 1px solid #cccccc;"><?= $this->data['email']; ?></td>
+                </tr>
+                <?php } ?>
+                <?php if ($this->data['tel']) { ?>
+                <tr>
+                  <td width="40%" style="padding: 10px; border-bottom: 1px solid #cccccc;"><strong>Telephone number</strong></td>
+                  <td width="60%" style="padding: 10px; border-bottom: 1px solid #cccccc;"><?= $this->data['tel']; ?></td>
+                </tr>
+                <?php } ?>
+              </table>
+            </td>
+          </tr>
+          <!-- END MAIN CONTENT AREA -->
+        </table>
+        <!-- START FOOTER --><!-- END FOOTER -->
+        <!-- END CENTERED WHITE CONTAINER -->
+      </div>
+    </td>
+    <td>&nbsp;</td>
+  </tr>
+</table>
+
+
+
+
+
+
+
+>>> modules/jobs/views/email_templates/job_alerts.php
+
+---------------
+
+
+
+
+
+
+
+>>> modules/page/views/email_templates/refer_friend.php
+
+<table border="0" cellpadding="0" cellspacing="0" class="body">
+  <tr>
+    <td>&nbsp;</td>
+    <td class="container">
+      <div class="content">
+        <!-- START CENTERED WHITE CONTAINER -->
+        <table class="main">
+          <!-- START MAIN CONTENT AREA -->
+          <tr>
+            <td class="wrapper"><p><strong>New friend referring</strong></p>
+              <p>The following person has requested a friend.</p>
+
+              <table width="100%" border="0" cellspacing="0" cellpadding="0" style="font-size:14px; color:#636363; font-family: Tahoma,sans-serif;">
+                <?php if ($this->data['your_name']) { ?>
+                <tr>
+                  <td width="40%" style="padding: 10px; border-bottom: 1px solid #cccccc;"><strong>Full name</strong></td>
+                  <td width="60%" style="padding: 10px; border-bottom: 1px solid #cccccc;"><?= $this->data['your_name']; ?></td>
+                </tr>
+                <?php } ?>
+                <?php if ($this->data['your_email']) { ?>
+                <tr>
+                  <td width="40%" style="padding: 10px; border-bottom: 1px solid #cccccc;"><strong>Email</strong></td>
+                  <td width="60%" style="padding: 10px; border-bottom: 1px solid #cccccc;"><?= $this->data['your_email']; ?></td>
+                </tr>
+                <?php } ?>
+                <?php if ($this->data['your_tel']) { ?>
+                <tr>
+                  <td width="40%" style="padding: 10px; border-bottom: 1px solid #cccccc;"><strong>Telephone number</strong></td>
+                  <td width="60%" style="padding: 10px; border-bottom: 1px solid #cccccc;"><?= $this->data['your_tel']; ?></td>
+                </tr>
+                <?php } ?>
+
+                <?php if ($this->data['friend_name']) { ?>
+                <tr>
+                  <td width="40%" style="padding: 10px; border-bottom: 1px solid #cccccc;"><strong>Friend full name</strong></td>
+                  <td width="60%" style="padding: 10px; border-bottom: 1px solid #cccccc;"><?= $this->data['friend_name']; ?></td>
+                </tr>
+                <?php } ?>
+                <?php if ($this->data['friend_email']) { ?>
+                <tr>
+                  <td width="40%" style="padding: 10px; border-bottom: 1px solid #cccccc;"><strong>Friend email</strong></td>
+                  <td width="60%" style="padding: 10px; border-bottom: 1px solid #cccccc;"><?= $this->data['friend_email']; ?></td>
+                </tr>
+                <?php } ?>
+                <?php if ($this->data['friend_tel']) { ?>
+                <tr>
+                  <td width="40%" style="padding: 10px; border-bottom: 1px solid #cccccc;"><strong>Friend telephone number</strong></td>
+                  <td width="60%" style="padding: 10px; border-bottom: 1px solid #cccccc;"><?= $this->data['friend_tel']; ?></td>
+                </tr>
+                <?php } ?>
+              </table>
+            </td>
+          </tr>
+          <!-- END MAIN CONTENT AREA -->
+        </table>
+        <!-- START FOOTER --><!-- END FOOTER -->
+        <!-- END CENTERED WHITE CONTAINER -->
+      </div>
+    </td>
+    <td>&nbsp;</td>
+  </tr>
+</table>
+
+
+
+
+
+
+
+>>> modules/page/views/email_templates/upload_job.php
+
+<table border="0" cellpadding="0" cellspacing="0" class="body">
+  <tr>
+    <td>&nbsp;</td>
+    <td class="container">
+      <div class="content">
+        <!-- START CENTERED WHITE CONTAINER -->
+        <table class="main">
+          <!-- START MAIN CONTENT AREA -->
+          <tr>
+            <td class="wrapper"><p><strong>New vacancy uploaded</strong></p>
+              <p>The following person has uploaded a vacancy.</p>
+
+              <table width="100%" border="0" cellspacing="0" cellpadding="0" style="font-size:14px; color:#636363; font-family: Tahoma,sans-serif;">
+                <?php if ($this->data['name']) { ?>
+                <tr>
+                  <td width="40%" style="padding: 10px; border-bottom: 1px solid #cccccc;"><strong>Full name</strong></td>
+                  <td width="60%" style="padding: 10px; border-bottom: 1px solid #cccccc;"><?= $this->data['name']; ?></td>
+                </tr>
+                <?php } ?>
+                <?php if ($this->data['company']) { ?>
+                <tr>
+                  <td width="40%" style="padding: 10px; border-bottom: 1px solid #cccccc;"><strong>Сompany</strong></td>
+                  <td width="60%" style="padding: 10px; border-bottom: 1px solid #cccccc;"><?= $this->data['company']; ?></td>
+                </tr>
+                <?php } ?>
+                <?php if ($this->data['email']) { ?>
+                <tr>
+                  <td width="40%" style="padding: 10px; border-bottom: 1px solid #cccccc;"><strong>Email</strong></td>
+                  <td width="60%" style="padding: 10px; border-bottom: 1px solid #cccccc;"><?= $this->data['email']; ?></td>
+                </tr>
+                <?php } ?>
+                <?php if ($this->data['tel']) { ?>
+                <tr>
+                  <td width="40%" style="padding: 10px; border-bottom: 1px solid #cccccc;"><strong>Telephone</strong></td>
+                  <td width="60%" style="padding: 10px; border-bottom: 1px solid #cccccc;"><?= $this->data['tel']; ?></td>
+                </tr>
+                <?php } ?>
+              </table>
+            </td>
+          </tr>
+          <!-- END MAIN CONTENT AREA -->
+        </table>
+        <!-- START FOOTER --><!-- END FOOTER -->
+        <!-- END CENTERED WHITE CONTAINER -->
+      </div>
+    </td>
+    <td>&nbsp;</td>
+  </tr>
+</table>
+
+
+
+
+
+
+>>> modules/landing/views/email_templates/contact.php
+
+<table cellpadding="0" cellspacing="0" width="100%" bgcolor="#ffffff">
+  <tr>
+    <td>
+      <table class="main table-600" cellpadding="0" cellspacing="0" width="600" align="center">
+        <tr>
+          <td height="30" width="100%"></td>
+        </tr>
+        <tr>
+          <td class="header-td">
+            <table class="table-460" cellpadding="0" cellspacing="0" width="460" align="center">
+              <tr>
+                <td align="center" class="logo">
+                  <img src="{URL:/}app/public/images/panel/email_logo.png" alt="logo" />
+                </td>
+              </tr>
+              <tr>
+                <td height="28"></td>
+              </tr>
+              <tr>
+                <td bgcolor="#F1F1F1" height="1"></td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <table class="main-tb" width="380"  align="center">
+              <tr>
+                <td><p style="font-family: Arial, Helvetica, sans-serif, 'Open Sans';">New Message</p></td>
+              </tr>
+              <tr>
+                <td>
+                  <table>
+                    <?php if (post('firstname')) { ?>
+                    <tr>
+                      <td class="label" style="font-family: Arial, Helvetica, sans-serif, 'Open Sans';">First Name</td>
+                      <td style="font-family: Arial, Helvetica, sans-serif, 'Open Sans';"><?= post('firstname') ?></td>
+                    </tr>
+                    <?php } ?>
+                    <?php if (post('lastname')) { ?>
+                    <tr>
+                      <td class="label" style="font-family: Arial, Helvetica, sans-serif, 'Open Sans';">Last Name</td>
+                      <td style="font-family: Arial, Helvetica, sans-serif, 'Open Sans';"><?= post('lastname') ?></td>
+                    </tr>
+                    <?php } ?>
+                    <?php if (post('email')) { ?>
+                    <tr>
+                      <td class="label" style="font-family: Arial, Helvetica, sans-serif, 'Open Sans';">Email</td>
+                      <td style="font-family: Arial, Helvetica, sans-serif, 'Open Sans';"><?= post('email') ?></td>
+                    </tr>
+                    <?php } ?>
+                    <?php if (post('tel')) { ?>
+                    <tr>
+                      <td class="label" style="font-family: Arial, Helvetica, sans-serif, 'Open Sans';">Phone Number</td>
+                      <td style="font-family: Arial, Helvetica, sans-serif, 'Open Sans';"><?= post('tel') ?></td>
+                    </tr>
+                    <?php } ?>
+                    <?php if (post('message')) { ?>
+                    <tr>
+                      <td class="label" style="font-family: Arial, Helvetica, sans-serif, 'Open Sans';">Message</td>
+                      <td style="font-family: Arial, Helvetica, sans-serif, 'Open Sans';"><?= post('message') ?></td>
+                    </tr>
+                    <?php } ?>
+                  </table>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+        <tr>
+          <td height="30"></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+
+
+
+
+
+
+>>> modules/panel/modules/vacancies/views/email_templates/new_vacancy.php
+
+<table border="0" cellpadding="0" cellspacing="0" class="body">
+  <tr>
+    <td>&nbsp;</td>
+    <td class="container">
+      <div class="content">
+        <!-- START CENTERED WHITE CONTAINER -->
+        <table class="main">
+          <!-- START MAIN CONTENT AREA -->
+          <tr>
+            <td class="wrapper" align="center">
+              <img src="<?= SITE_URL ?>app/public/images/logo.png" alt="" width="250" height="350">
+            </td>
+          </tr>
+
+          <tr>
+            <td class="wrapper">
+              <p>Hi <?= $this->customer->firstname?>,</p>
+              <p>I have added your <?= $this->edit->title ?> Vacancy to the client portal.</p>
+              <p>Please click this button to be taken to the client portal, where you will be able to view the advert.</p>
+              <br>
+              <p><a class="calc_btn"  href="{URL:login}">Client Portal</a></p>
+              <br>
+              <p>You will receive an email with a link to the portal, anytime I add a new candidate for you to view.</p>
+              <p>I will get cracking on the role and you should start to see candidates soon.</p>
+              <br>
+              <p>Best Regards,<br>
+                Simon Monaghan</p>
+            </td>
+          </tr>
+          <!-- END MAIN CONTENT AREA -->
+        </table>
+        <!-- START FOOTER --><!-- END FOOTER -->
+        <!-- END CENTERED WHITE CONTAINER -->
+      </div>
+    </td>
+    <td>&nbsp;</td>
+  </tr>
+</table>
+
+
+
+
+
+
+>>> modules/panel/modules/vacancies/views/email_templates/new_candidate.php
+
+<table border="0" cellpadding="0" cellspacing="0" class="body">
+  <tr>
+    <td>&nbsp;</td>
+    <td class="container">
+      <div class="content">
+        <!-- START CENTERED WHITE CONTAINER -->
+        <table class="main">
+          <!-- START MAIN CONTENT AREA -->
+          <tr>
+            <td class="wrapper" align="center">
+              <img src="<?= SITE_URL ?>app/public/images/logo.png" alt="" width="250" height="350">
+            </td>
+          </tr>
+
+          <tr>
+            <td class="wrapper">
+              <p>Hi <?= $this->customer->firstname ?>,</p>
+              <p>Here is a new candidate for the role of <?= $this->vacancy->title ?>:</p>
+              <p>Please click this button to be taken to the client portal.</p>
+              <p><a class="calc_btn"  href="{URL:login}">Client Portal</a></p>
+              <p>Here you can do any of the following:</p>
+              <p>-View the candidate details and see why I think they are a great fit.</p>
+              <p>-Download and share CV</p>
+              <p>-Ask a question</p>
+              <p>-Arrange an interview and provide availability</p>
+              <p>-Arrange a technical challenge</p>
+              <p>-Reject the candidate and give feedback</p>
+              <br>
+              <br>
+              <p>Of course, you can always pick up the phone too!</p>
+              <br>
+              <p>Regards,<br>
+                Simon Monaghan</p>
+            </td>
+          </tr>
+          <!-- END MAIN CONTENT AREA -->
+        </table>
+        <!-- START FOOTER --><!-- END FOOTER -->
+        <!-- END CENTERED WHITE CONTAINER -->
+      </div>
+    </td>
+    <td>&nbsp;</td>
+  </tr>
+</table>
+
+
+
+
+
+
+
+>>> modules/profile/views/email_templates/added_cv.php
+
+<table border="0" cellpadding="0" cellspacing="0" class="body">
+  <tr>
+    <td>&nbsp;</td>
+    <td class="container">
+      <div class="content">
+        <!-- START CENTERED WHITE CONTAINER -->
+        <table class="main">
+          <!-- START MAIN CONTENT AREA -->
+          <tr>
+            <td class="wrapper"><p><strong>The next person uploaded cv</strong></p></td>
+            <table width="100%" border="0" cellspacing="0" cellpadding="0" style="font-size:14px; color:#636363; font-family: Tahoma,sans-serif;">
+              <?php if (User::get('firstname', 'candidate')) { ?>
+              <tr>
+                <td width="40%" style="padding: 10px; border-bottom: 1px solid #cccccc;"><strong>Full name</strong></td>
+                <td width="60%" style="padding: 10px; border-bottom: 1px solid #cccccc;"><?= User::get('firstname', 'candidate') . ' ' . User::get('lastname', 'candidate'); ?></td>
+              </tr>
+              <?php } ?>
+              <?php if (User::get('tel', 'candidate')) { ?>
+              <tr>
+                <td width="40%" style="padding: 10px; border-bottom: 1px solid #cccccc;"><strong>Telephone</strong></td>
+                <td width="60%" style="padding: 10px; border-bottom: 1px solid #cccccc;"><?= User::get('tel', 'candidate'); ?></td>
+              </tr>
+              <?php } ?>
+              <?php if (User::get('email', 'candidate')) { ?>
+              <tr>
+                <td width="40%" style="padding: 10px; border-bottom: 1px solid #cccccc;"><strong>Email</strong></td>
+                <td width="60%" style="padding: 10px; border-bottom: 1px solid #cccccc;"><?= User::get('email', 'candidate'); ?></td>
+              </tr>
+              <?php } ?>
+            </table>
+          </tr>
+          <!-- END MAIN CONTENT AREA -->
+        </table>
+        <!-- START FOOTER --><!-- END FOOTER -->
+        <!-- END CENTERED WHITE CONTAINER -->
+      </div>
+    </td>
+    <td>&nbsp;</td>
+  </tr>
+</table>
+
+
+
+
+
+
+>>> modules/panel/modules/candidates_portal/views/email_templates/offer_accepted.php
+
+<table border="0" cellpadding="0" cellspacing="0" class="body">
+  <tr>
+    <td>&nbsp;</td>
+    <td class="container">
+      <div class="content">
+        <!-- START CENTERED WHITE CONTAINER -->
+        <table class="main">
+          <!-- START MAIN CONTENT AREA -->
+          <tr>
+            <td class="wrapper" align="center">
+              <img src="<?= SITE_URL ?>app/public/images/logo.png" alt="" width="250" height="350">
+            </td>
+          </tr>
+
+          <tr>
+            <td class="wrapper">
+              <p>Hi <?= $this->customer->firstname ?>,</p>
+              <p>Congratulations, <?= $this->user->firstname ?> has accepted the verbal offer you
+                have made and you can now log into your client portal to see all of the contact information
+                and any identification, so that you can make this offer official to them.</p>
+              <p>Please click <a class="calc_btn"  href="<?= SITE_URL ?>login">Client Portal</a>
+                to access your offered and placed candidates page.</p>
+              <p>Can you please send an email copy of your offer to  <?= $this->user->firstname ?> and CC me into this?</p>
+              <p>This is so I can manage the official acceptance once they have reviewed the paperwork,
+                their resignation and any counter offer situation that may arise. (If employed)</p>
+              <p>Can you also advise me of when they can expect their offer letter, contract and any other documentation, please?</p>
+              <p>Please bear in mind that until paperwork is reviewed and agreed, there is always a slim chance of something changing,
+                the best way to mitigate this risk is to move the offer process forward as swiftly and professionally as possible.</p>
+              <p>Is there any other information that you need from <?= $this->user->firstname ?> or myself to move this forward quickly?</p>
+              <br>
+              <p>Regards,<br>
+                Simon Monaghan</p>
+            </td>
+          </tr>
+          <!-- END MAIN CONTENT AREA -->
+        </table>
+        <!-- START FOOTER --><!-- END FOOTER -->
+        <!-- END CENTERED WHITE CONTAINER -->
+      </div>
+    </td>
+    <td>&nbsp;</td>
+  </tr>
+</table>
+
+
+
+
+
+
+>>> modules/panel/modules/portal_vacancies/views/email_templates/updated_candidate.php
+
+-------------

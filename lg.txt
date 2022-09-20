@@ -1,0 +1,7 @@
+
+            SELECT *
+            FROM `vacancies`
+            WHERE `deleted` = 'no'
+            ORDER BY `time` DESC
+            LIMIT 12
+        

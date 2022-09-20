@@ -1,0 +1,14 @@
+#update/*.sql
+#!tables.sql
+/.idea/
+/app/data/
+
+jobs.xml
+robots.txt
+sitemap.xml
+
+error.log
+access.log
+
+app/public/plugins/ckeditor/plugins/zsuploader/error_log
+app/public/plugins/kcfinder/error_log

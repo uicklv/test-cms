@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Color Picker</title>
+
+    <link rel="stylesheet" href="../app/public/css/backend/colorPick.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js" type="text/javascript"></script>
+    <script src="../app/public/js/backend/colorPick.js"></script>
+    <style>
+        .picker {
+            border-radius: 5px;
+            width: 36px;
+            height: 36px;
+            cursor: pointer;
+            -webkit-transition: all linear .2s;
+            -moz-transition: all linear .2s;
+            -ms-transition: all linear .2s;
+            -o-transition: all linear .2s;
+            transition: all linear .2s;
+            border: thin solid #eee;
+        }
+    </style>
+</head>
+<body>
+
+
+
+<div class="col">
+    <div class="picker" id="picker1"></div>
+    <input type="hidden" name="title_color" id="title_color" value="<?= post('title_color', false, $this->edit->title_color); ?>">
+</div>
+
+
+<script>
+    $("#picker1").colorPick({
+        'initialColor' : '#64c2c8',
+        'palette': [
+            "#64c2c8", "#1abc9c", "#16a085", "#2ecc71", "#27ae60",
+            "#3498db", "#2980b9", "#9b59b6", "#8e44ad",
+            "#34495e", "#2c3e50", "#34495e", "#000000",
+            "#f1c40f", "#f39c12", "#e67e22", "#d35400", "#e74c3c",
+            "#c0392b", "#ecf0f1"
+        ],
+        'onColorSelected': function() {
+            $('#title_color').val(this.color);
+            console.log("The user has selected the color: " + this.color)
+            this.element.css({'backgroundColor': this.color, 'color': this.color});
+        }
+    });
+</script>
+
+
+
+</body>
+</html>

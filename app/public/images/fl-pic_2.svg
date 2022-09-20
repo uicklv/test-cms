@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="132.57" height="46.411" viewBox="0 0 132.57 46.411">
+  <g id="Group_866" data-name="Group 866" transform="translate(-1 -1)">
+    <g id="Group_865" data-name="Group 865" transform="translate(46.66 2)">
+      <circle id="Ellipse_33733" data-name="Ellipse 33733" cx="22.205" cy="22.205" r="22.205" stroke-width="2" stroke="#3fabc7" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" fill="none"/>
+      <path id="Path_60733" data-name="Path 60733" d="M91.9,36.566a13.8,13.8,0,0,1-18.8,4.824A13.446,13.446,0,0,1,68.2,36.4" transform="translate(-57.804 -7.791)" fill="none" stroke="#3fabc7" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="2"/>
+      <circle id="Ellipse_33734" data-name="Ellipse 33734" cx="1.497" cy="1.497" r="1.497" transform="translate(13.307 16.3)" stroke-width="2" stroke="#3fabc7" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" fill="none"/>
+      <circle id="Ellipse_33735" data-name="Ellipse 33735" cx="1.497" cy="1.497" r="1.497" transform="translate(28.11 16.3)" stroke-width="2" stroke="#3fabc7" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" fill="none"/>
+    </g>
+    <path id="Path_60734" data-name="Path 60734" d="M35.682,22.726h1.331a2.661,2.661,0,0,0,0-5.323h-14.8A54.323,54.323,0,0,0,23.54,5.261a2.661,2.661,0,0,0-5.323,0s-2.661,14.8-12.142,14.8H2V36.2H8.736c2.661,0,8.067,2.661,10.728,2.661H32.938a2.661,2.661,0,0,0,0-5.323h1.331a2.661,2.661,0,1,0,0-5.323H35.6a2.627,2.627,0,0,0,2.661-2.661,2.6,2.6,0,0,0-2.578-2.828" transform="translate(0 -0.101)" fill="none" stroke="#3fabc7" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="2"/>
+    <path id="Path_60735" data-name="Path 60735" d="M144.4,14.3a8.749,8.749,0,0,0-8.067,5.406,8.749,8.749,0,0,0-8.067-5.406,8.022,8.022,0,0,0-8.067,8.067c0,6.986,5.9,13.972,16.134,20.958,10.229-6.9,16.134-13.889,16.134-20.958A8.129,8.129,0,0,0,144.4,14.3Z" transform="translate(-19.898 -2.071)" fill="none" stroke="#3fabc7" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="2"/>
+  </g>
+</svg>

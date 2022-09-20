@@ -1,0 +1,21 @@
+@import "variables";
+
+@import "mixins";
+
+@import "reset";
+
+@import "common";
+
+@import "shop";
+
+@import "account"; // User profile, login, register
+
+@import "talent"; // Talent vault
+
+@import "portal"; // Candidate portal
+
+//@import "locations";
+
+@import "responsive";
+
+@import "preloader";
