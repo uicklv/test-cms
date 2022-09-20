@@ -114,6 +114,7 @@ class VacanciesController extends Controller
             if ($this->isValid()) {
                 $data = array(
                     'title'         => post('title'),
+                    'test'         => post('test'),
                     'ref'           => Model::createIdentifier('vacancies', post('ref'), 'ref', $this->view->edit->id),
                     'salary_value'  => post('salary_value'),
                     'contract_type' => post('contract_type'),
