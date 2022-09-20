@@ -1,4 +1,8 @@
 <?php
+function test()
+{
+
+}
 /**
  * @param $message
  * @param string $file
