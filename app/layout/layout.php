@@ -1,5 +1,5 @@
 <?php if (!Request::isAjax()) { ?>
-123123213123123
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
