@@ -1,5 +1,4 @@
 <?php if (!Request::isAjax()) { ?>
-еуые
 <!DOCTYPE html>
 <html lang="en">
 <head>
