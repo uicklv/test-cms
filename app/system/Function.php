@@ -1,4 +1,9 @@
 <?php
+function test2()
+{
+
+}
+
 function test()
 {
 
