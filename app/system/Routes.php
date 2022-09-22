@@ -93,4 +93,8 @@ Route::set('shop/search', 'shop@search')->name('shop-search');
 Route::set('upload-image', 'page@upload_image')->name('upload_image');
 Route::set('url-info', 'page@url_info')->name('url-info');
 
+//TEST
+Route::set('test', 'page@upload_image')->name('upload_image');
+
+
 /* End of file */
